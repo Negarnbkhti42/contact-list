@@ -1,9 +1,12 @@
 import Layout from "../layout";
+import Main from "../pages/Main";
 
 function App() {
   return (
     <div>
-      <Layout />
+      <Layout>
+        <Main />
+      </Layout>
     </div>
   );
 }

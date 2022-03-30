@@ -1,0 +1,21 @@
+.layout {
+    &_header {
+        width: 100vw;
+        height: 70px;
+        background-color: #bdbdbd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &_main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &_container {
+        width: 320px;
+        padding: 10px;
+    }
+}
