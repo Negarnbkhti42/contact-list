@@ -1,3 +1,5 @@
+import "./contactList.scss";
+
 function ContactList({ contacts }) {
   return (
     <div>
@@ -12,12 +14,15 @@ export default ContactList;
 
 function Contact({ data }) {
   return (
-    <div>
-      <span>
+    <div className="contact_wrapper">
+      <div className="contact_info">
         <p>name: {data.name}</p>
         <p>email: {data.email}</p>
-      </span>
-      <button>delete</button>
+      </div>
+      <div className="contact_buttons">
+        <button className="btn_edit">edit</button>
+        <button className="btn_delete">delete</button>
+      </div>
     </div>
   );
 }

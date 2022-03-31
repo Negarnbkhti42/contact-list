@@ -1,0 +1,36 @@
+.contact {
+    &_wrapper {
+        border: 2px solid #bdbdbd;
+        border-radius: 5px;
+        padding: 5px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    &_info {
+        p {
+            margin: 0;
+        }
+    }
+
+    &_buttons {
+        align-self: flex-end;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+}
+
+.btn {
+    &_delete {
+        border-color: #ec4141;
+        color: #ec4141;
+    }
+}
