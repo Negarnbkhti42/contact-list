@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -9,12 +9,14 @@ function Add() {
     email: "",
   });
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
-
   function handleChange(event) {
     setState({ ...state, [event.target.name]: event.target.value });
+  }
+
+  function addContact(event) {
+    event.preventDefault();
+    axios.post("http://localhost:3001/contacts", { ...state });
+    navigate("/");
   }
 
   return (
@@ -39,8 +41,10 @@ function Add() {
         value={state.email}
         required
       />
-      <button type="submit">add</button>
-      <button onClick={() => navigate(-1, { replace: true })} type="button">
+      <button type="submit" onClick={addContact}>
+        add
+      </button>
+      <button onClick={() => navigate("/")} type="button">
         cancel
       </button>
     </form>

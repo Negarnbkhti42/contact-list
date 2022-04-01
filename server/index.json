@@ -1,14 +1,19 @@
 {
-    "contacts": [
-        {
-            "id": 1,
-            "name": "Negar",
-            "email": "example@gmail.com"
-        },
-        {
-            "id": 2,
-            "name": "Ali",
-            "email": "Ali@gmail.com"
-        }
-    ]
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Negar",
+      "email": "example@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Ali",
+      "email": "Ali@gmail.com"
+    },
+    {
+      "name": "reza",
+      "email": "someone@example.com",
+      "id": 3
+    }
+  ]
 }
