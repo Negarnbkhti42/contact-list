@@ -1,10 +1,17 @@
+import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Add() {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     name: "",
     email: "",
   });
+
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
 
   function handleChange(event) {
     setState({ ...state, [event.target.name]: event.target.value });
@@ -19,6 +26,7 @@ function Add() {
         type="text"
         placeholder="name..."
         onChange={handleChange}
+        value={state.name}
         required
       />
       <label htmlFor="email">email: </label>
@@ -28,10 +36,13 @@ function Add() {
         type="email"
         placeholder="email..."
         onChange={handleChange}
+        value={state.email}
         required
       />
       <button type="submit">add</button>
-      <button type="button">cancel</button>
+      <button onClick={() => navigate(-1, { replace: true })} type="button">
+        cancel
+      </button>
     </form>
   );
 }
