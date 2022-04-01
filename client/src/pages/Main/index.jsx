@@ -2,13 +2,18 @@ import ContactList from "../../components/ContactList";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import axios from "axios";
 
 function Main() {
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    setContacts(localStorage.getItem("contacts") || []);
+    axios
+      .get("http://localhost:3001/contacts")
+      .then((res) => res.data)
+      .then((data) => setContacts(data))
+      .catch((er) => console.log(er));
   }, []);
 
   return (
