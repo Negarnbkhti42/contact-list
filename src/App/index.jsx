@@ -1,11 +1,16 @@
 import Layout from "../layout";
-import Main from "../pages/Main";
+import routes from "../routes";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Layout>
-        <Main />
+        <Routes>
+          {routes.map((route) => (
+            <Route key={routes.path} {...route} />
+          ))}
+        </Routes>
       </Layout>
     </div>
   );
