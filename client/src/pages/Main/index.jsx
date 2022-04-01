@@ -2,6 +2,7 @@ import ContactList from "../../components/ContactList";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import { getContacts } from "../../services/getContactsService";
 import axios from "axios";
 
 function Main() {
@@ -9,8 +10,7 @@ function Main() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/contacts")
+    getContacts()
       .then((res) => res.data)
       .then((data) => setContacts(data))
       .catch((er) => console.log(er));

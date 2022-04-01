@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { addContact } from "../../services/addContactService";
 
 function Add() {
   const navigate = useNavigate();
@@ -13,9 +14,9 @@ function Add() {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
-  function addContact(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    axios.post("http://localhost:3001/contacts", { ...state });
+    addContact(state);
     navigate("/");
   }
 
@@ -41,7 +42,7 @@ function Add() {
         value={state.email}
         required
       />
-      <button type="submit" onClick={addContact}>
+      <button type="submit" onClick={handleSubmit}>
         add
       </button>
       <button onClick={() => navigate("/")} type="button">
