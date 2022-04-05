@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addContact } from "../../services/addContactService";
+import "./add.scss";
 
 function Add() {
   const navigate = useNavigate();
@@ -21,32 +22,40 @@ function Add() {
 
   return (
     <form className="add_form">
-      <label htmlFor="name">name: </label>
-      <input
-        id="name"
-        name="name"
-        type="text"
-        placeholder="name..."
-        onChange={handleChange}
-        value={state.name}
-        required
-      />
-      <label htmlFor="email">email: </label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="email..."
-        onChange={handleChange}
-        value={state.email}
-        required
-      />
-      <button type="submit" onClick={handleSubmit}>
-        add
-      </button>
-      <button onClick={() => navigate("/")} type="button">
-        cancel
-      </button>
+      <div className="add_formfields">
+        <label htmlFor="name">name: </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="name..."
+          onChange={handleChange}
+          value={state.name}
+          required
+        />
+        <label htmlFor="email">email: </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="email..."
+          onChange={handleChange}
+          value={state.email}
+          required
+        />
+      </div>
+      <div className="add_buttons">
+        <button className="add_addbtn" type="submit" onClick={handleSubmit}>
+          add
+        </button>
+        <button
+          className="add_cancelbtn"
+          onClick={() => navigate("/")}
+          type="button"
+        >
+          cancel
+        </button>
+      </div>
     </form>
   );
 }
