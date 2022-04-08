@@ -27,12 +27,20 @@ function Main() {
     });
   };
 
+  const handleEdit = (id) => {
+    navigate(`/edit/${id}`);
+  };
+
   return (
     <div className="main_wrapper">
       <button onClick={() => navigate("./add")} className="btn" type="button">
         add
       </button>
-      <ContactList contacts={contacts} handleDelete={handleDelete} />
+      <ContactList
+        contacts={contacts}
+        handleDelete={handleDelete}
+        handleEdit={handleEdit}
+      />
     </div>
   );
 }
