@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { addContact } from "../../services/addContactService";
 import { getContact } from "../../services/getContactService";
+import { updateContact } from "../../services/updateContactService";
 import "./edit.scss";
 
 function Edit() {
@@ -19,21 +19,18 @@ function Edit() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // addContact(state);
-    // navigate("/");
+    updateContact(params.id, state)
+      .then(() => navigate("/"))
+      .catch((err) => console.log(err));
   }
 
   useEffect(() => {
     getContact(params.id)
       .then((res) => {
-        setState({ ...res });
+        setState({ name: res.name, email: res.email });
       })
       .catch((er) => console.log(er));
   }, []);
-
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
 
   return (
     <form className="add_form">
@@ -61,7 +58,7 @@ function Edit() {
       </div>
       <div className="add_buttons">
         <button className="add_addbtn" type="submit" onClick={handleSubmit}>
-          add
+          edit
         </button>
         <button
           className="add_cancelbtn"
