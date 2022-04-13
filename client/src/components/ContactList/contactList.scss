@@ -22,8 +22,14 @@
         gap: 10px;
     }
 
-    &_info {
+    &_profile {
+        display: flex;
+        align-items: center;
         align-self: flex-start;
+        gap: 20px;
+    }
+
+    &_info {
         p {
             margin: 0;
             line-height: 1.5em;
@@ -38,6 +44,11 @@
         justify-content: flex-end;
         gap: 5px;
         width: 100%;
+    }
+
+    &_icon {
+        width: 30px;
+        height: 30px;
     }
 }
 

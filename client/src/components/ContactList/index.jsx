@@ -1,4 +1,5 @@
 import "./contactList.scss";
+import { FaRegUserCircle } from "react-icons/fa";
 
 function ContactList({ contacts, handleDelete, handleEdit }) {
   return (
@@ -20,9 +21,12 @@ export default ContactList;
 function Contact({ data, onDelete, onEdit }) {
   return (
     <div className="contact_wrapper">
-      <div className="contact_info">
-        <p>name: {data.name}</p>
-        <p>email: {data.email}</p>
+      <div className="contact_profile">
+        <FaRegUserCircle className="contact_icon" />
+        <div className="contact_info">
+          <p>name: {data.name}</p>
+          <p>email: {data.email}</p>
+        </div>
       </div>
       <div className="contact_buttons">
         <button onClick={onEdit} className="btn btn_edit">
