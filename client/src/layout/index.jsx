@@ -1,3 +1,4 @@
+import Sidebar from "../components/Sidebar";
 import "./layout.scss";
 
 function Layout({ children }) {
@@ -8,9 +9,10 @@ function Layout({ children }) {
           <h1>contact list</h1>
         </div>
       </header>
-      <main className="layout_main">
-        <div className="layout_container">{children}</div>
-      </main>
+      <div className="layout_container">
+        <Sidebar />
+        <main className="layout_main">{children}</main>
+      </div>
     </>
   );
 }

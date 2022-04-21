@@ -19,16 +19,17 @@
         }
     }
 
-    &_main {
+    &_container {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    &_container {
+    &_main {
         min-width: 320px;
-        width: 60vw;
+        width: 100vw;
         max-width: 450px;
         padding: 10px;
+        background-color: rgb(244, 246, 248);
     }
 }
