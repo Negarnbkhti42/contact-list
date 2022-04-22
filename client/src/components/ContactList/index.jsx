@@ -6,7 +6,7 @@ function ContactList({ contacts, handleDelete, handleEdit }) {
   return (
     <div className="contactlist_wrapper">
       {contacts.map((contact) => (
-        <Contact
+        <ContactItem
           onDelete={() => handleDelete(contact.id)}
           onEdit={() => handleEdit(contact.id)}
           key={contact.id}
@@ -19,23 +19,13 @@ function ContactList({ contacts, handleDelete, handleEdit }) {
 
 export default ContactList;
 
-function Contact({ data, onDelete, onEdit }) {
+function ContactItem({ data, onDelete, onEdit }) {
   return (
-    <Link to={`/edit/${data.id}`} className="contact_wrapper">
-      <div className="contact_profile">
-        <FaRegUserCircle className="contact_icon" />
-        <div className="contact_info">
-          <p>name: {data.name}</p>
-          <p>email: {data.email}</p>
-        </div>
-      </div>
-      <div className="contact_buttons">
-        <button onClick={onEdit} className="btn btn_edit">
-          edit
-        </button>
-        <button onClick={onDelete} className="btn btn_delete">
-          delete
-        </button>
+    <Link to={`/edit/${data.id}`} className="contactItem_wrapper">
+      <FaRegUserCircle className="contactItem_icon" />
+      <div className="contactItem_info">
+        <p>{data.name}</p>
+        <p>{data.email}</p>
       </div>
     </Link>
   );

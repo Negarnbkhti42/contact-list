@@ -1,4 +1,5 @@
 import ContactList from "../../components/ContactList";
+import Sidebar from "../../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -33,14 +34,17 @@ function Main() {
 
   return (
     <div className="main_wrapper">
-      <button onClick={() => navigate("./add")} type="button">
-        add
-      </button>
-      <ContactList
-        contacts={contacts}
-        handleDelete={handleDelete}
-        handleEdit={handleEdit}
-      />
+      <Sidebar />
+      <main className="main_main">
+        <button onClick={() => navigate("./add")} type="button">
+          add
+        </button>
+        <ContactList
+          contacts={contacts}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+        />
+      </main>
     </div>
   );
 }
