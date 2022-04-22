@@ -1,4 +1,5 @@
 import "./contactList.scss";
+import { Link } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 
 function ContactList({ contacts, handleDelete, handleEdit }) {
@@ -20,7 +21,7 @@ export default ContactList;
 
 function Contact({ data, onDelete, onEdit }) {
   return (
-    <div className="contact_wrapper">
+    <Link to={`/edit/${data.id}`} className="contact_wrapper">
       <div className="contact_profile">
         <FaRegUserCircle className="contact_icon" />
         <div className="contact_info">
@@ -36,6 +37,6 @@ function Contact({ data, onDelete, onEdit }) {
           delete
         </button>
       </div>
-    </div>
+    </Link>
   );
 }

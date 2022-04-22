@@ -33,7 +33,7 @@ function Main() {
 
   return (
     <div className="main_wrapper">
-      <button onClick={() => navigate("./add")} className="btn" type="button">
+      <button onClick={() => navigate("./add")} type="button">
         add
       </button>
       <ContactList

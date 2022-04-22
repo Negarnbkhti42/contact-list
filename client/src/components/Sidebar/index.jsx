@@ -9,11 +9,13 @@ function Sidebar() {
       title: "home",
       link: "/",
       icon: AiFillHome,
+      theme: "rgb(210, 164, 211)",
     },
     {
       title: "favorites",
       link: "/",
       icon: BsFillBookmarkStarFill,
+      theme: "rgb(253, 184, 45)",
     },
   ];
 
@@ -22,17 +24,19 @@ function Sidebar() {
       <ul className="sidebar_links">
         {links.map((link, idx) => {
           return (
-            <li key={idx}>
-              <NavLink
-                className={({ isActive }) =>
-                  `sidebar_item ${isActive ? "sidebar_item-active" : ""}`
-                }
-                to={link.link}
-              >
-                <link.icon className={`sidebar_icon icon-${link.title}`} />
-                {link.title}
-              </NavLink>
-            </li>
+            <NavLink
+              key={idx}
+              className={({ isActive }) =>
+                `sidebar_link ${isActive ? "sidebar_link-active" : ""}`
+              }
+              to={link.link}
+            >
+              <link.icon
+                style={{ color: link.theme }}
+                className={`sidebar_icon icon-${link.title}`}
+              />
+              {link.title}
+            </NavLink>
           );
         })}
       </ul>

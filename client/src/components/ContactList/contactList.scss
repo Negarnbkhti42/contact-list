@@ -11,9 +11,12 @@
 
 .contact {
     &_wrapper {
-        border: 2px solid #bdbdbd;
+        text-decoration: none;
+        color: #000;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 10px rgba(77, 77, 77, 0.295);
         border-radius: 7px;
-        padding: 10px 5px;
+        padding: 10px 8px;
         width: 100%;
 
         display: flex;
