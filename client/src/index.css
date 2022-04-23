@@ -23,10 +23,11 @@ button {
   font-size: 1em;
   border: none;
   color: #6690c5;
-  padding: 3px 5px;
+  padding: 5px 8px;
   cursor: pointer;
 }
 
 button:hover {
-  background:rgba(78, 229, 239, 0.075);
+  background:#6690c5;
+  color: #bed8ff;
 }

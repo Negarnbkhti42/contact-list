@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import TextInput from "../../components/TextInput";
 import { addContact } from "../../services/addContactService";
 import "./add.scss";
 
@@ -24,7 +25,7 @@ function Add() {
     <form className="add_form">
       <div className="add_formfields">
         <label htmlFor="name">name: </label>
-        <input
+        <TextInput
           id="name"
           name="name"
           type="text"
@@ -34,7 +35,7 @@ function Add() {
           required
         />
         <label htmlFor="email">email: </label>
-        <input
+        <TextInput
           id="email"
           name="email"
           type="email"
