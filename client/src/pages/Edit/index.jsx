@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import TextInput from "../../components/TextInput";
 import { getContact } from "../../services/getContactService";
 import { updateContact } from "../../services/updateContactService";
 import "./edit.scss";
@@ -36,7 +37,7 @@ function Edit() {
     <form className="add_form">
       <div className="add_formfields">
         <label htmlFor="name">name: </label>
-        <input
+        <TextInput
           id="name"
           name="name"
           type="text"
@@ -46,7 +47,7 @@ function Edit() {
           required
         />
         <label htmlFor="email">email: </label>
-        <input
+        <TextInput
           id="email"
           name="email"
           type="email"

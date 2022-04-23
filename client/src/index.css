@@ -18,10 +18,10 @@ code {
 }
 
 button {
-  background: none;
+  background: #bed8ff;
   border-radius: 5px;
   font-size: 1em;
-  border: 2px solid #bed8ff;
+  border: none;
   color: #6690c5;
   padding: 3px 5px;
   cursor: pointer;
