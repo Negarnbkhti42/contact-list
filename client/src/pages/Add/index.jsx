@@ -38,7 +38,8 @@ function Add() {
         <TextInput
           id="phone"
           name="phone"
-          type="phone"
+          type="tel"
+          pattern="(0[1-9][0-9]{9})|(\+[1-9][0-9]{11})"
           placeholder="phone..."
           onChange={handleChange}
           value={state.phone}
