@@ -24,8 +24,8 @@ function ContactItem({ data, onDelete, onEdit }) {
     <Link to={`/edit/${data.id}`} className="contactItem_wrapper">
       <FaRegUserCircle className="contactItem_icon" />
       <div className="contactItem_info">
-        <p>{data.name}</p>
-        <p>{data.email}</p>
+        <p className="contactItem_info-name">{data.name}</p>
+        <p className="contactItem_info-phone">{data.phone}</p>
       </div>
     </Link>
   );

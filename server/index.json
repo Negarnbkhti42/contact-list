@@ -2,23 +2,18 @@
   "contacts": [
     {
       "name": "Negar",
-      "email": "norob35@gmail.com",
+      "phone": "09163525730",
       "id": 5
     },
     {
       "name": "parisa",
-      "email": "symphonyopera@gmail.com",
+      "phone": "09127521385",
       "id": 7
     },
     {
       "name": "Ali",
-      "email": "example@gmail.com",
+      "phone": "09653857316",
       "id": 8
-    },
-    {
-      "name": "parichehr",
-      "email": "something@gmail.com",
-      "id": 9
     }
   ]
 }

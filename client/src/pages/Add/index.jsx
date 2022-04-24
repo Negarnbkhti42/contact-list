@@ -8,7 +8,7 @@ function Add() {
   const navigate = useNavigate();
   const [state, setState] = useState({
     name: "",
-    email: "",
+    phone: "",
   });
 
   function handleChange(event) {
@@ -34,14 +34,14 @@ function Add() {
           value={state.name}
           required
         />
-        <label htmlFor="email">email: </label>
+        <label htmlFor="phone">phone: </label>
         <TextInput
-          id="email"
-          name="email"
-          type="email"
-          placeholder="email..."
+          id="phone"
+          name="phone"
+          type="phone"
+          placeholder="phone..."
           onChange={handleChange}
-          value={state.email}
+          value={state.phone}
           required
         />
       </div>

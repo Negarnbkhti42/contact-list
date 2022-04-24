@@ -11,7 +11,7 @@ function Edit() {
   const params = useParams();
   const [state, setState] = useState({
     name: "",
-    email: "",
+    phone: "",
   });
 
   function handleChange(event) {
@@ -28,9 +28,10 @@ function Edit() {
   useEffect(() => {
     getContact(params.id)
       .then((res) => {
-        setState({ name: res.name, email: res.email });
+        setState({ name: res.name, phone: res.phone });
       })
       .catch((er) => console.log(er));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -46,14 +47,14 @@ function Edit() {
           value={state.name}
           required
         />
-        <label htmlFor="email">email: </label>
+        <label htmlFor="phone">phone: </label>
         <TextInput
-          id="email"
-          name="email"
-          type="email"
-          placeholder="email..."
+          id="phone"
+          name="phone"
+          type="phone"
+          placeholder="phone..."
           onChange={handleChange}
-          value={state.email}
+          value={state.phone}
           required
         />
       </div>
