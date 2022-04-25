@@ -1,6 +1,7 @@
 import "./contactList.scss";
 import { Link } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 function ContactList({ contacts, handleDelete, handleEdit }) {
   return (
@@ -16,6 +17,18 @@ function ContactList({ contacts, handleDelete, handleEdit }) {
     </div>
   );
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.shape({}),
+  handleDelete: PropTypes.func,
+  handleEdit: PropTypes.func,
+};
+
+ContactList.defaultProps = {
+  contacts: {},
+  handleDelete: null,
+  handleEdit: null,
+};
 
 export default ContactList;
 

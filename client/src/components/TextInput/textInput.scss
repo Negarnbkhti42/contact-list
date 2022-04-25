@@ -1,24 +1,28 @@
 .input {
+    position: relative;
+
     & input {
         outline: none;
         border: none;
         width: 100%;
         font-size: 1.3em;
-    }
-    position: relative;
 
-    &::after {
-        content: "";
+        &:invalid + span {
+            background: #e75035;
+        }
+    }
+
+    & span {
         position: absolute;
         bottom: -2px;
         left: 0;
         width: 100%;
         height: 2px;
         background: rgb(149, 149, 149);
-        transition: 0.1s;
+        transition: all 0.2s ease-in-out;
     }
 
-    &:focus-within::after {
+    &:focus-within span {
         height: 3px;
         background: #6690c5;
     }

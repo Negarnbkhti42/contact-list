@@ -20,6 +20,7 @@ function Edit() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(event);
     updateContact(params.id, state)
       .then(() => navigate("/"))
       .catch((err) => console.log(err));
