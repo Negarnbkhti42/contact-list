@@ -31,7 +31,7 @@ function ContactForm({ onChange, onSubmit, onCancel, ...props }) {
       </div>
       <div className="contactForm_buttons">
         <button className="contactForm_addbtn" type="submit" onClick={onSubmit}>
-          edit
+          done
         </button>
         <button
           className="contactForm_cancelbtn"

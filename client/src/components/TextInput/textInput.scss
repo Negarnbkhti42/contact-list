@@ -7,7 +7,7 @@
         width: 100%;
         font-size: 1.3em;
 
-        &:invalid + span {
+        &:invalid:focus:not(:placeholder-shown) + span {
             background: #e75035;
         }
     }
