@@ -13,6 +13,7 @@ function Edit() {
   const [state, setState] = useState({
     name: "",
     phone: "",
+    email: "",
   });
 
   function handleChange(event) {

@@ -19,13 +19,13 @@ function ContactList({ contacts, handleDelete, handleEdit }) {
 }
 
 ContactList.propTypes = {
-  contacts: PropTypes.shape({}),
+  contacts: PropTypes.array,
   handleDelete: PropTypes.func,
   handleEdit: PropTypes.func,
 };
 
 ContactList.defaultProps = {
-  contacts: {},
+  contacts: [],
   handleDelete: null,
   handleEdit: null,
 };

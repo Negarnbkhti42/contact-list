@@ -17,6 +17,7 @@ function ContactForm({ onChange, onSubmit, onCancel, data }) {
           value={data.name}
           required
         />
+
         <label htmlFor="phone">phone: </label>
         <TextInput
           id="phone"
@@ -27,6 +28,16 @@ function ContactForm({ onChange, onSubmit, onCancel, data }) {
           onChange={onChange}
           value={data.phone}
           required
+        />
+
+        <label htmlFor="email">email: </label>
+        <TextInput
+          id="email"
+          name="email"
+          type="email"
+          placeholder="email..."
+          onChange={onChange}
+          value={data.email}
         />
       </div>
       <div className="contactForm_buttons">
