@@ -1,18 +1,19 @@
 .sidebar {
     &_container {
-        width: 250px;
+        width: 100vw;
         background-color: #ffffff;
         border: 1px solid #ddd;
         position: absolute;
-        left: -250px;
+        left: 0;
+        bottom: 0;
     }
 
     &_links {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
     }
 
     &_link {
@@ -24,7 +25,7 @@
         opacity: 0.8;
 
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         gap: 5px;
         transition: all 0.1s ease-in-out;
@@ -36,6 +37,10 @@
             background-color: rgba(164, 164, 164, 0.2);
             opacity: 1;
         }
+
+        & span {
+            display: none;
+        }
     }
 }
 
@@ -43,6 +48,24 @@
     .sidebar {
         &_container {
             position: static;
+            width: 250px;
+        }
+
+        &_links {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
+
+            padding-left: 40px;
+        }
+
+        &_link {
+            flex-direction: row;
+
+            & span {
+                display: inline-block;
+            }
         }
     }
 }

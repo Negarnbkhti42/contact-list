@@ -20,7 +20,7 @@ function Sidebar() {
   ];
 
   return (
-    <div className="sidebar_container">
+    <aside className="sidebar_container">
       <ul className="sidebar_links">
         {links.map((link, idx) => {
           return (
@@ -35,12 +35,12 @@ function Sidebar() {
                 style={{ color: link.theme }}
                 className={`sidebar_icon icon-${link.title}`}
               />
-              {link.title}
+              <span>{link.title}</span>
             </NavLink>
           );
         })}
       </ul>
-    </div>
+    </aside>
   );
 }
 
