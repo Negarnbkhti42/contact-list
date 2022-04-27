@@ -23,6 +23,7 @@ function Add() {
 
   return (
     <ContactForm
+      data={state}
       onChange={handleChange}
       onSubmit={handleSubmit}
       onCancel={() => navigate("/")}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "./contactForm.scss";
 
-function ContactForm({ onChange, onSubmit, onCancel, ...props }) {
+function ContactForm({ onChange, onSubmit, onCancel, data }) {
   return (
     <form className="contactForm_form">
       <div className="contactForm_formfields">
@@ -14,7 +14,7 @@ function ContactForm({ onChange, onSubmit, onCancel, ...props }) {
           type="text"
           placeholder="name..."
           onChange={onChange}
-          value={props.name}
+          value={data.name}
           required
         />
         <label htmlFor="phone">phone: </label>
@@ -25,7 +25,7 @@ function ContactForm({ onChange, onSubmit, onCancel, ...props }) {
           pattern="(0[1-9][0-9]{9})|(\+[1-9][0-9]{11})"
           placeholder="phone..."
           onChange={onChange}
-          value={props.phone}
+          value={data.phone}
           required
         />
       </div>
@@ -48,11 +48,18 @@ function ContactForm({ onChange, onSubmit, onCancel, ...props }) {
 export default ContactForm;
 
 ContactForm.propTypes = {
-  name: PropTypes.string,
-  phone: PropTypes.string,
+  data: PropTypes.shape({}),
+  onCancel: PropTypes.func,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 ContactForm.defaultPops = {
-  name: "",
-  phone: "",
+  data: {
+    name: "",
+    phone: "",
+  },
+  onCancel: null,
+  onChange: null,
+  onSubmit: null,
 };

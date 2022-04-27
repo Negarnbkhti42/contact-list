@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ContactForm from "../../components/ContactForm";
-import TextInput from "../../components/TextInput";
 import { getContact } from "../../services/getContactService";
 import { updateContact } from "../../services/updateContactService";
 import "./edit.scss";
@@ -39,6 +38,7 @@ function Edit() {
 
   return (
     <ContactForm
+      data={state}
       onChange={handleChange}
       onSubmit={handleSubmit}
       onCancel={() => navigate("/")}
