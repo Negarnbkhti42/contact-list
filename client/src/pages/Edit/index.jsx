@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ContactForm from "../../components/ContactForm";
 import TextInput from "../../components/TextInput";
 import { getContact } from "../../services/getContactService";
 import { updateContact } from "../../services/updateContactService";
@@ -9,6 +10,7 @@ import "./edit.scss";
 function Edit() {
   const navigate = useNavigate();
   const params = useParams();
+
   const [state, setState] = useState({
     name: "",
     phone: "",
@@ -36,43 +38,11 @@ function Edit() {
   }, []);
 
   return (
-    <form className="add_form">
-      <div className="add_formfields">
-        <label htmlFor="name">name: </label>
-        <TextInput
-          id="name"
-          name="name"
-          type="text"
-          placeholder="name..."
-          onChange={handleChange}
-          value={state.name}
-          required
-        />
-        <label htmlFor="phone">phone: </label>
-        <TextInput
-          id="phone"
-          name="phone"
-          type="tel"
-          pattern="(0[1-9][0-9]{9})|(\+[1-9][0-9]{11})"
-          placeholder="phone..."
-          onChange={handleChange}
-          value={state.phone}
-          required
-        />
-      </div>
-      <div className="add_buttons">
-        <button className="add_addbtn" type="submit" onClick={handleSubmit}>
-          edit
-        </button>
-        <button
-          className="add_cancelbtn"
-          onClick={() => navigate("/")}
-          type="button"
-        >
-          cancel
-        </button>
-      </div>
-    </form>
+    <ContactForm
+      onChange={handleChange}
+      onSubmit={handleSubmit}
+      onCancel={() => navigate("/")}
+    />
   );
 }
 
