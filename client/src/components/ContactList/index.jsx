@@ -3,16 +3,11 @@ import { Link } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import PropTypes from "prop-types";
 
-function ContactList({ contacts, handleDelete, handleEdit }) {
+function ContactList({ contacts }) {
   return (
     <div className="contactlist_wrapper">
       {contacts.map((contact) => (
-        <ContactItem
-          onDelete={() => handleDelete(contact.id)}
-          onEdit={() => handleEdit(contact.id)}
-          key={contact.id}
-          data={contact}
-        />
+        <ContactItem key={contact.id} data={contact} />
       ))}
     </div>
   );
@@ -32,9 +27,9 @@ ContactList.defaultProps = {
 
 export default ContactList;
 
-function ContactItem({ data, onDelete, onEdit }) {
+function ContactItem({ data }) {
   return (
-    <Link to={`/edit/${data.id}`} className="contactItem_wrapper">
+    <Link to={`/contact/${data.id}`} className="contactItem_wrapper">
       <FaRegUserCircle className="contactItem_icon" />
       <div className="contactItem_info">
         <p className="contactItem_info-name">{data.name}</p>

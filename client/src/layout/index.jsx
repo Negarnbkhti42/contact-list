@@ -5,7 +5,7 @@ function Layout({ children }) {
     <>
       <div className="layout_container">
         <header className="layout_header">my contacts</header>
-        {children}
+        <div className="layout_wrapper">{children}</div>
       </div>
     </>
   );

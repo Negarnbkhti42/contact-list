@@ -1,6 +1,7 @@
 import Main from './pages/Main';
 import Add from './pages/Add';
 import Edit from './pages/Edit';
+import View from './pages/View';
 
 const routes = [
     {
@@ -8,14 +9,18 @@ const routes = [
         element: <Add />
     },
     {
+        path: "/edit/:id",
+        element: <Edit />
+    },
+    {
+        path: "/contact/:id",
+        element: <View />
+    },
+    {
         path: "/",
         element: <Main />,
         exact: true
     },
-    {
-        path: "/edit/:id",
-        element: <Edit />
-    }
 ];
 
 export default routes;

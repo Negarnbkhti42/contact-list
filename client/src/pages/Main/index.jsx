@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getContacts } from "../../services/getContactsService";
 import "./main.scss";
-import { deleteContact } from "../../services/deleteContactService";
 
 function Main() {
   const navigate = useNavigate();
@@ -22,16 +21,6 @@ function Main() {
     getAllContacts();
   }, []);
 
-  const handleDelete = (id) => {
-    deleteContact(id).then((res) => {
-      getAllContacts();
-    });
-  };
-
-  const handleEdit = (id) => {
-    navigate(`/edit/${id}`);
-  };
-
   return (
     <div className="main_wrapper">
       <Sidebar />
@@ -39,11 +28,7 @@ function Main() {
         <button onClick={() => navigate("./add")} type="button">
           add
         </button>
-        <ContactList
-          contacts={contacts}
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
-        />
+        <ContactList contacts={contacts} />
       </main>
     </div>
   );
