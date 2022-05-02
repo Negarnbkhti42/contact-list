@@ -24,7 +24,7 @@ function Edit() {
     event.preventDefault();
     console.log(event);
     updateContact(params.id, state)
-      .then(() => navigate("/"))
+      .then(() => navigate(-1))
       .catch((err) => console.log(err));
   }
 
@@ -42,7 +42,7 @@ function Edit() {
       data={state}
       onChange={handleChange}
       onSubmit={handleSubmit}
-      onCancel={() => navigate("/")}
+      onCancel={() => navigate(-1)}
     />
   );
 }

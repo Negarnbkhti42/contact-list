@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getContact } from "../../services/getContactService";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FiPhone, FiMail } from "react-icons/fi";
@@ -36,6 +36,9 @@ function View() {
           </div>
         ))}
       </div>
+      <Link to={`/edit/${params.id}`} className="edit_float">
+        edit contact
+      </Link>
     </>
   );
 }
