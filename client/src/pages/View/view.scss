@@ -1,0 +1,34 @@
+.view {
+    &_profile {
+        font-size: 5em;
+        font-weight: 200;
+    }
+    &_info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        &-item {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 10px;
+
+            font-size: 1.1em;
+
+            &:first-child {
+                align-self: center;
+                font-size: 1.4em;
+                color: #000;
+                font-weight: 500;
+            }
+
+            &:not(:first-child) > :first-child {
+                color: rgba(0, 0, 0, 0.488);
+                font-size: 1.3em;
+            }
+        }
+    }
+}

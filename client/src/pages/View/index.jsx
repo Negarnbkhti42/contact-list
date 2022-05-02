@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getContact } from "../../services/getContactService";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { FiPhone, FiMail } from "react-icons/fi";
+
+import "./view.scss";
 
 function View() {
   const params = useParams();
   const [data, setData] = useState({});
+
+  const icons = {
+    phone: <FiPhone />,
+    email: <FiMail />,
+  };
 
   useEffect(() => {
     getContact(params.id)
@@ -17,14 +26,17 @@ function View() {
   }, []);
 
   return (
-    <div className="view_container">
-      {Object.keys(data).map((key) => (
-        <div key={key}>
-          <span>{key}</span>
-          <span>{data[key]}</span>
-        </div>
-      ))}
-    </div>
+    <>
+      <IoPersonCircleOutline className="view_profile" />
+      <div className="view_info">
+        {Object.keys(data).map((key) => (
+          <div className="view_info-item" key={key}>
+            {icons[key]}
+            <span>{data[key]}</span>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
