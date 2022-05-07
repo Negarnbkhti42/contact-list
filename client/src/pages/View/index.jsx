@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getContact } from "../../services/getContactService";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FiPhone, FiMail } from "react-icons/fi";
+import PopupMenu from "../../components/PopupMenu";
 
 import "./view.scss";
 
@@ -27,18 +28,25 @@ function View() {
 
   return (
     <>
-      <IoPersonCircleOutline className="view_profile" />
-      <div className="view_info">
-        {Object.keys(data).map((key) => (
-          <div className="view_info-item" key={key}>
-            {icons[key]}
-            <span>{data[key]}</span>
-          </div>
-        ))}
+      <div className="view_header">
+        <PopupMenu>
+          <ul className="menu_ul">
+            <li>edit</li>
+            <li>remove</li>
+          </ul>
+        </PopupMenu>
       </div>
-      <Link to={`/edit/${params.id}`} className="edit_float">
-        edit contact
-      </Link>
+      <div className="view_contact">
+        <IoPersonCircleOutline className="view_profile" />
+        <div className="view_info">
+          {Object.keys(data).map((key) => (
+            <div className="view_info-item" key={key}>
+              {icons[key]}
+              <span>{data[key]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

@@ -1,0 +1,35 @@
+.popup {
+    position: relative;
+
+    &_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 1.3em;
+        width: 31px;
+        height: 31px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            background-color: rgba(174, 174, 174, 0.382);
+        }
+
+        &:active {
+            background-color: rgba(120, 120, 120, 0.5);
+        }
+    }
+
+    &_menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.337);
+        width: max-content;
+        min-width: 150px;
+    }
+}
