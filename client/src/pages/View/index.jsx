@@ -19,8 +19,7 @@ function View() {
   useEffect(() => {
     getContact(params.id)
       .then((res) => {
-        let { id, ...userData } = res;
-        setData(userData);
+        setData(res.data);
       })
       .catch((er) => console.log(er));
     // eslint-disable-next-line react-hooks/exhaustive-deps

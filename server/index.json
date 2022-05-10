@@ -1,25 +1,29 @@
 {
   "contacts": [
     {
-      "name": "Negar",
-      "phone": "09163525730",
-      "id": 5
+      "id": 5,
+      "data": {
+        "name": "Negar",
+      "phone": "09163525730"
+      },
+      "favorite": false
     },
     {
-      "name": "parisa",
-      "phone": "09127521385",
-      "id": 7
+      "id": 7,
+      "data": {
+        "name": "parisa",
+        "phone": "09127521385"
+      },
+      "favorite": false
     },
     {
-      "name": "Ali",
-      "phone": "09653857316",
-      "id": 8
-    },
-    {
-      "name": "pri",
-      "phone": "09234321234",
-      "email": "example@gmail.com",
-      "id": 9
+      "id": 9,
+      "data": {
+        "name": "pri",
+        "phone": "09234321234",
+        "email": "example@gmail.com"
+      },
+      "favorite": false
     }
   ]
 }

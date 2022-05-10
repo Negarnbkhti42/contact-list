@@ -30,8 +30,8 @@ function Edit() {
 
   useEffect(() => {
     getContact(params.id)
-      .then((res) => {
-        setState({ name: res.name, phone: res.phone });
+      .then(({ data }) => {
+        setState({ name: data.name, phone: data.phone });
       })
       .catch((er) => console.log(er));
     // eslint-disable-next-line react-hooks/exhaustive-deps

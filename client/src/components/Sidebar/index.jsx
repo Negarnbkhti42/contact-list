@@ -13,7 +13,7 @@ function Sidebar() {
     },
     {
       title: "favorites",
-      link: "/",
+      link: "/favorites",
       icon: BsFillBookmarkStarFill,
       theme: "rgb(253, 184, 45)",
     },

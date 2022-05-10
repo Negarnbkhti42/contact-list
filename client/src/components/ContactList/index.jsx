@@ -7,7 +7,7 @@ function ContactList({ contacts }) {
   return (
     <div className="contactlist_wrapper">
       {contacts.map((contact) => (
-        <ContactItem key={contact.id} data={contact} />
+        <ContactItem key={contact.id} id={contact.id} data={contact.data} />
       ))}
     </div>
   );
@@ -27,9 +27,9 @@ ContactList.defaultProps = {
 
 export default ContactList;
 
-function ContactItem({ data }) {
+function ContactItem({ data, id }) {
   return (
-    <Link to={`/contact/${data.id}`} className="contactItem_wrapper">
+    <Link to={`/contact/${id}`} className="contactItem_wrapper">
       <FaRegUserCircle className="contactItem_icon" />
       <div className="contactItem_info">
         <p className="contactItem_info-name">{data.name}</p>

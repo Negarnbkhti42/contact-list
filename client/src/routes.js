@@ -17,6 +17,11 @@ const routes = [
         element: <View />
     },
     {
+        path: "/:group",
+        element: <Main />,
+        exact: true
+    },
+    {
         path: "/",
         element: <Main />,
         exact: true

@@ -8,7 +8,7 @@ function App() {
       <Layout>
         <Routes>
           {routes.map((route) => (
-            <Route key={routes.path} {...route} />
+            <Route key={route.path} {...route} />
           ))}
         </Routes>
       </Layout>
