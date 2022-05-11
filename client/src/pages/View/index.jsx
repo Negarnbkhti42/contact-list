@@ -2,24 +2,33 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getContact } from "../../services/getContactService";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { FiPhone, FiMail, FiStar } from "react-icons/fi";
+import { FiPhone, FiMail } from "react-icons/fi";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import PopupMenu from "../../components/PopupMenu";
 
 import "./view.scss";
+import { updateContact } from "../../services/updateContactService";
 
 function View() {
   const params = useParams();
   const [data, setData] = useState({});
+  const [favorite, setFavorite] = useState(false);
 
   const icons = {
     phone: <FiPhone />,
     email: <FiMail />,
   };
 
+  const changeFavorite = () => {
+    updateContact(params.id, { favorite: !favorite });
+    setFavorite(!favorite);
+  };
+
   useEffect(() => {
     getContact(params.id)
       .then((res) => {
         setData(res.data);
+        setFavorite(res.favorite);
       })
       .catch((er) => console.log(er));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,9 +45,13 @@ function View() {
             <li>remove</li>
           </ul>
         </PopupMenu>
-        <button className="header-button">
-          <FiStar />
-        </button>
+        <span onClick={changeFavorite}>
+          {favorite ? (
+            <AiFillStar className="header_icon header_icon-favorite" />
+          ) : (
+            <AiOutlineStar className="header_icon" />
+          )}
+        </span>
       </div>
       <div className="view_contact">
         <IoPersonCircleOutline className="view_profile" />

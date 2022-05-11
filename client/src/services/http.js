@@ -6,7 +6,8 @@ const http = {
     get: axios.get,
     put: axios.put,
     delete: axios.delete,
-    post: axios.post
+    post: axios.post,
+    patch: axios.patch
 }
 
 export default http;

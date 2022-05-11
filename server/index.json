@@ -1,7 +1,7 @@
 {
   "contacts": [
     {
-      "favorite": false,
+      "favorite": true,
       "data": {
         "name": "Negar",
         "phone": "09163525730"

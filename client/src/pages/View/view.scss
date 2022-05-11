@@ -4,6 +4,8 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
     }
 
     &_contactActions {
@@ -64,6 +66,16 @@
             padding: 10px 5px;
             list-style: none;
             cursor: pointer;
+        }
+    }
+}
+
+.header {
+    &_icon {
+        font-size: 1.5em;
+
+        &-favorite {
+            color: #ffc966;
         }
     }
 }
