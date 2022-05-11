@@ -19,7 +19,6 @@ const routes = [
     {
         path: "/:group",
         element: <Main />,
-        exact: true
     },
     {
         path: "/",
