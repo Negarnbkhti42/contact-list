@@ -6,6 +6,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
+        z-index: 5;
     }
 
     &_links {
@@ -21,7 +22,7 @@
         cursor: pointer;
         padding: 5px 5px;
         border-radius: 5px;
-        font-size: 1.2em;
+        font-size: 1.4em;
         opacity: 0.8;
 
         display: flex;
@@ -64,6 +65,7 @@
 
         &_link {
             flex-direction: row;
+            font-size: 1.2em;
 
             & span {
                 display: inline-block;

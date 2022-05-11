@@ -7,9 +7,16 @@
     }
 
     &_main {
+        position: relative;
         width: 100%;
         min-height: calc(100vh - 100px);
         padding: 0 10px;
         background-color: rgb(255, 255, 255);
+    }
+
+    &_add {
+        position: absolute;
+        right: 20px;
+        bottom: 100px;
     }
 }

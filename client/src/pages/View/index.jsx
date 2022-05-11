@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getContact } from "../../services/getContactService";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { FiPhone, FiMail } from "react-icons/fi";
+import { FiPhone, FiMail, FiStar } from "react-icons/fi";
 import PopupMenu from "../../components/PopupMenu";
 
 import "./view.scss";
@@ -30,10 +30,15 @@ function View() {
       <div className="view_header">
         <PopupMenu>
           <ul className="menu_ul">
-            <li>edit</li>
+            <li>
+              <Link to={`/edit/${params.id}`}>edit</Link>
+            </li>
             <li>remove</li>
           </ul>
         </PopupMenu>
+        <button className="header-button">
+          <FiStar />
+        </button>
       </div>
       <div className="view_contact">
         <IoPersonCircleOutline className="view_profile" />

@@ -10,8 +10,7 @@
 
 .contactItem {
     &_wrapper {
-        text-decoration: none;
-        color: #000;
+        all: unset;
         background-color: rgb(255, 255, 255);
         padding: 10px 8px;
         width: 100%;
@@ -43,7 +42,6 @@
         }
 
         &-name {
-            color: #000;
         }
 
         &-phone {

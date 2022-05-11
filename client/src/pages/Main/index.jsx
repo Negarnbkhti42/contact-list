@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getContacts } from "../../services/getContactsService";
+import { BsPlusLg } from "react-icons/bs";
 import "./main.scss";
 
 function Main() {
@@ -38,14 +39,18 @@ function Main() {
     } else {
       setFilteredContacts(contacts);
     }
-  }, [param]);
+  }, [param, contacts]);
 
   return (
     <div className="main_wrapper">
       <Sidebar />
       <main className="main_main">
-        <button onClick={() => navigate("./add")} type="button">
-          add
+        <button
+          className="main_add"
+          onClick={() => navigate("./add")}
+          type="button"
+        >
+          <BsPlusLg />
         </button>
         <ContactList contacts={filteredContacts} />
       </main>

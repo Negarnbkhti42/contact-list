@@ -10,6 +10,7 @@ function Edit() {
   const navigate = useNavigate();
   const params = useParams();
 
+  const [favorite, setFavorite] = useState(false);
   const [state, setState] = useState({
     name: "",
     phone: "",
@@ -23,15 +24,16 @@ function Edit() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
-    updateContact(params.id, state)
+    updateContact(params.id, { favorite, data: { ...state } })
       .then(() => navigate(-1))
       .catch((err) => console.log(err));
   }
 
   useEffect(() => {
     getContact(params.id)
-      .then(({ data }) => {
+      .then(({ data, favorite }) => {
         setState({ name: data.name, phone: data.phone });
+        setFavorite(favorite ?? false);
       })
       .catch((er) => console.log(er));
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,20 +1,20 @@
 {
   "contacts": [
     {
-      "id": 5,
+      "favorite": false,
       "data": {
         "name": "Negar",
-      "phone": "09163525730"
+        "phone": "09163525730"
       },
-      "favorite": false
+      "id": 5
     },
     {
-      "id": 7,
+      "favorite": false,
       "data": {
         "name": "parisa",
-        "phone": "09127521385"
+        "phone": "09267832152"
       },
-      "favorite": false
+      "id": 7
     },
     {
       "id": 9,
