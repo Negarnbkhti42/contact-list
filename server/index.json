@@ -23,7 +23,7 @@
         "phone": "09234321234",
         "email": "example@gmail.com"
       },
-      "favorite": false
+      "favorite": true
     }
   ]
 }

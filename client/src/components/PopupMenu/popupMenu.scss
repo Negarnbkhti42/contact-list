@@ -6,7 +6,7 @@
         align-items: center;
         justify-content: center;
 
-        font-size: 1.3em;
+        font-size: 1.5em;
         width: 31px;
         height: 31px;
         border-radius: 50%;
@@ -23,6 +23,8 @@
     }
 
     &_menu {
+        overflow: hidden;
+
         position: absolute;
         top: 0;
         right: 0;
