@@ -20,6 +20,8 @@
         align-items: center;
         gap: 10px;
 
+        cursor: pointer;
+
         &:hover {
             background-color: rgba(150, 150, 150, 0.303);
         }
@@ -38,9 +40,6 @@
             line-height: 1.5em;
             font-weight: 600;
             white-space: nowrap;
-        }
-
-        &-name {
         }
 
         &-phone {
