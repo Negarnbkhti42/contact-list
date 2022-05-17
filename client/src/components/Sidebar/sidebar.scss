@@ -5,12 +5,19 @@
         border-top: 1px solid #ddd;
         position: fixed;
         left: 0;
+        right: 0;
         bottom: 0;
         z-index: 5;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
     }
 
     &_links {
         display: flex;
+        flex-grow: 1;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
@@ -48,19 +55,22 @@
 @media screen and (min-width: 769px) {
     .sidebar {
         &_container {
-            position: static;
-            width: 250px;
+            width: 170px;
+            top: 100px;
+            left: auto;
+            right: 78vw;
             border-top: 0;
             border-right: 1px solid #ddd;
         }
 
         &_links {
+            align-self: flex-end;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
             gap: 20px;
 
-            padding-left: 40px;
+            padding-right: 20px;
         }
 
         &_link {

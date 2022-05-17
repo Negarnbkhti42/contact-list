@@ -2,8 +2,9 @@ import "./sidebar.scss";
 import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
+import PropTypes from "prop-types";
 
-function Sidebar() {
+function Sidebar({ className }) {
   const links = [
     {
       title: "home",
@@ -20,7 +21,7 @@ function Sidebar() {
   ];
 
   return (
-    <aside className="sidebar_container">
+    <aside className={`sidebar_container ${className}`}>
       <ul className="sidebar_links">
         {links.map((link, idx) => {
           return (
@@ -45,3 +46,11 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
+Sidebar.propTypes = {
+  className: PropTypes.string,
+};
+
+Sidebar.defaultProps = {
+  className: "",
+};
