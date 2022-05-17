@@ -6,12 +6,14 @@ import { useState } from "react";
 import { getContacts } from "../../services/getContactsService";
 import { BsPlusLg } from "react-icons/bs";
 import "./main.scss";
+import Search from "../../components/Search";
 
 function Main() {
   const navigate = useNavigate();
   const param = useParams();
   const [contacts, setContacts] = useState([]);
   const [filteredContacts, setFilteredContacts] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   const getAllContacts = () => {
     getContacts()
@@ -21,6 +23,10 @@ function Main() {
         setFilteredContacts(data);
       })
       .catch((er) => console.log(er));
+  };
+
+  const handleSearch = ({ target }) => {
+    setSearchValue(target.value);
   };
 
   useEffect(() => {
@@ -45,6 +51,7 @@ function Main() {
     <div className="main_wrapper">
       <Sidebar />
       <main className="main_main">
+        <Search value={searchValue} onChange={handleSearch} />
         <button
           className="main_add"
           onClick={() => navigate("./add")}
