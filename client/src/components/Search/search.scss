@@ -1,0 +1,14 @@
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+    &_icon {
+        font-size: 1.2em;
+    }
+
+    &_input {
+        flex-grow: 1;
+    }
+}

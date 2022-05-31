@@ -25,8 +25,13 @@ function Main() {
       .catch((er) => console.log(er));
   };
 
-  const handleSearch = ({ target }) => {
-    setSearchValue(target.value);
+  const handleSearch = ({ target: { value } }) => {
+    setSearchValue(value);
+    setFilteredContacts(
+      contacts.filter((contact) =>
+        contact.data.name.toLowerCase().includes(value.toLowerCase())
+      )
+    );
   };
 
   useEffect(() => {
