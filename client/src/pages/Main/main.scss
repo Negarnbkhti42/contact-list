@@ -8,15 +8,30 @@
 
     &_main {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         min-height: calc(100vh - 100px);
         padding: 0 10px;
         background-color: rgb(255, 255, 255);
     }
 
+    &_search {
+        width: 100%;
+    }
+
     &_add {
         position: fixed;
-        right: 40px;
+        align-self: flex-end;
+        // right: 40px;
         bottom: 100px;
+    }
+
+    &_message {
+        padding: 10px 15px;
+        color: #6b6b6b;
+        font-weight: 500;
+        font-size: 1.3em;
     }
 }

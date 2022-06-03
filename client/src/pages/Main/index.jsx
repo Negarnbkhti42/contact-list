@@ -1,8 +1,7 @@
 import ContactList from "../../components/ContactList";
 import Sidebar from "../../components/Sidebar";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { getContacts } from "../../services/getContactsService";
 import { BsPlusLg } from "react-icons/bs";
 import "./main.scss";
@@ -11,6 +10,8 @@ import Search from "../../components/Search";
 function Main() {
   const navigate = useNavigate();
   const param = useParams();
+  const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState(null);
   const [contacts, setContacts] = useState([]);
   const [filteredContacts, setFilteredContacts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -22,7 +23,7 @@ function Main() {
         setContacts(data);
         setFilteredContacts(data);
       })
-      .catch((er) => console.log(er));
+      .catch((er) => setError(er.message));
   };
 
   const handleSearch = ({ target: { value } }) => {
@@ -35,7 +36,7 @@ function Main() {
   };
 
   useEffect(() => {
-    getAllContacts();
+    startTransition(getAllContacts);
   }, []);
 
   useEffect(() => {
@@ -56,7 +57,11 @@ function Main() {
     <div className="main_wrapper">
       <Sidebar />
       <main className="main_main">
-        <Search value={searchValue} onChange={handleSearch} />
+        <Search
+          className="main_search"
+          value={searchValue}
+          onChange={handleSearch}
+        />
         <button
           className="main_add"
           onClick={() => navigate("./add")}
@@ -64,7 +69,13 @@ function Main() {
         >
           <BsPlusLg />
         </button>
-        <ContactList contacts={filteredContacts} />
+        {isPending ? (
+          <span className="main_message">loading...</span>
+        ) : error ? (
+          <span className="main_message">{error}</span>
+        ) : (
+          <ContactList contacts={filteredContacts} />
+        )}
       </main>
     </div>
   );
